@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let swiper = new Swiper(".mySwiper", {
+  let swiper = new Swiper(".popularSwiper", {
     slidesPerView: 5,
     spaceBetween: 30,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".popular-button-next",
+      prevEl: ".popular-button-prev",
     },
-  });  
+  });
 });
-
