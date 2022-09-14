@@ -1,0 +1,448 @@
+// @font-face {
+//     font-family: "Montserrat";
+//     src: local("Montserrat");
+//     src: url("/fonts/Montserrat-Bold.eot");
+//     src: url("/fonts/Montserrat-Bold.ttf");
+//     src: url("/fonts/Montserrat-Bold.eot?#iefix") format("embedded-opentype");
+//     src: url("/fonts/Montserrat-Bold.woff") format("woff");
+//     src: url("/fonts/Montserrat-Bold.woff2") format("woff2");
+//     src: url("/fonts/Montserrat-ExtraBold.eot");
+//     src: url("/fonts/Montserrat-ExtraBold.ttf");
+//     src: url("/fonts/Montserrat-ExtraBold.eot?#iefix") format("embedded-opentype");
+//     src: url("/fonts/Montserrat-ExtraBold.woff") format("woff");
+//     src: url("/fonts/Montserrat-ExtraBold.woff2") format("woff2");
+//     src: url("/fonts/Montserrat-Medium.eot");
+//     src: url("/fonts/Montserrat-Medium.ttf");
+//     src: url("/fonts/Montserrat-Medium.eot?#iefix") format("embedded-opentype");
+//     src: url("/fonts/Montserrat-Medium.woff") format("woff");
+//     src: url("/fonts/Montserrat-Medium.woff2") format("woff2");
+// }
+@font-face {
+    font-family: "Montserrat-ExtraBold";
+    src: local("Montserrat-ExtraBold");
+    src: url("/fonts/Montserrat-ExtraBold.eot");
+    src: url("/fonts/Montserrat-ExtraBold.ttf");
+    src: url("/fonts/Montserrat-ExtraBold.eot?#iefix") format("embedded-opentype");
+    src: url("/fonts/Montserrat-ExtraBold.woff") format("woff");
+    src: url("/fonts/Montserrat-ExtraBold.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: local("Montserrat-Bold");
+    src: url("/fonts/Montserrat-Bold.eot");
+    src: url("/fonts/Montserrat-Bold.ttf");
+    src: url("/fonts/Montserrat-Bold.eot?#iefix") format("embedded-opentype");
+    src: url("/fonts/Montserrat-Bold.woff") format("woff");
+    src: url("/fonts/Montserrat-Bold.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: local("Montserrat-Medium");
+    src: url("/fonts/Montserrat-Medium.eot");
+    src: url("/fonts/Montserrat-Medium.ttf");
+    src: url("/fonts/Montserrat-Medium.eot?#iefix") format("embedded-opentype");
+    src: url("/fonts/Montserrat-Medium.woff") format("woff");
+    src: url("/fonts/Montserrat-Medium.woff2") format("woff2");
+}
+
+:root {
+    --color-black: #000000;
+    --color-red: #bd1920;
+    --color-yellow: #ffc300;
+    --color-light-gray: #8f8e8f;
+    --color-gray: #c8c6c7;
+    --color-white: #fff;
+    --time-trans: 0.2s;
+    --font-family: "Montserrat", sans-serif;
+    --font-weight-500: 500;
+    --font-weight-700: 700;
+    --font-weight-800: 800;
+    --font-size-11: 0.6875rem;
+    --font-size-12: 0.75rem;
+    --font-size-14: 0.875rem;
+    --font-size-14-6: 1, 04375rem;
+    --font-size-16: 1rem;
+    --font-size-16-7: 1rem;
+    --font-size-54: 3.375rem;
+    --font-size-28: 1.75rem;
+    --font-size-30: 1.875rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 0.6875rem;
+
+    @media (min-width: 420px) {
+        font-size: 0.875rem;
+    }
+}
+
+p,
+span,
+a,
+li,
+input {
+    line-height: 28px;
+    font-family: "Montserrat-Medium", sans-serif;
+    font-weight: 500;
+    color: black;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family);
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a {
+    transition: color var(--time-trans) ease;
+}
+@media (any-hover: hover) {
+    a:hover {
+        color: var(--color-red);
+    }
+}
+ul li {
+    letter-spacing: none;
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+
+.container {
+    max-width: 1072px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+.header {
+    &__container {
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 744px;
+            background-image: url("../img/header.png");
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+    }
+
+    &__logo {
+        margin: 0 20px 0 0;
+    }
+    // .header__top
+
+    &__top {
+        margin: 0 auto;
+        padding: 25px 0;
+        display: flex;
+        align-items: center;
+
+        & nav {
+            flex: 1 1 auto;
+            & ul {
+                display: flex;
+                align-items: center;
+                & li {
+                    margin: 0 20px 0 0;
+                    & a {
+                        text-transform: uppercase;
+                        font-size: var(--font-size-14-6);
+                    }
+                }
+            }
+        }
+
+        & form {
+            display: flex;
+            align-items: center;
+            margin: 0 55px 0 0;
+            & input {
+                width: 0px;
+                margin: 0 5px 0 0;
+            }
+        }
+    }
+
+    &__btn-search {
+        width: 14px;
+        height: 14px;
+        background-image: url("../img/search.svg");
+        background-repeat: no-repeat;
+        background-position: 0, 0;
+        background-color: transparent;
+    }
+
+    // .header__contact
+
+    &__contact {
+        position: relative;
+        padding: 5px 13px 5px 33px;
+        border-radius: 10px;
+        background-color: var(--color-yellow);
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background-image: url("../img/phone.svg");
+        }
+    }
+
+    // .header__info
+
+    &__info {
+        margin: 90px auto 0;
+
+        & h1 {
+            font-family: "Montserrat-ExtraBold";
+            font-size: var(--font-size-54);
+            line-height: 27px;
+            color: var(--color-red);
+            margin: 0 0 25px 0;
+        }
+    }
+
+    &__text {
+        margin: 0 0 40px 0;
+
+        & p {
+            max-width: 500px;
+            line-height: 1.2;
+            font-size: var(--font-size-14-6);
+            &:not(:last-child) {
+                margin: 0 0 20px 0;
+            }
+
+            &:last-child {
+                margin: 0 0 35px 0;
+            }
+        }
+        & button {
+            color: var(--color-white);
+            background-color: var(--color-red);
+            font-family: "Montserrat-Medium";
+            font-size: var(--font-size-14-6);
+            padding: 16px 50px;
+            border-radius: 16px;
+        }
+    }
+
+    // .header__support
+
+    &__support {
+        padding: 12px 60px 12px 90px;
+        margin: 0 0 20px 0;
+        background-color: var(--color-white);
+        border-radius: 16px;
+        max-width: fit-content;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 26px;
+            height: 24px;
+            left: 32px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-image: url("data:image/svg+xml,%3Csvg width='26' height='24' viewBox='0 0 26 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.5 9H17.3333C16.6833 9 16.25 9.4 16.25 10C16.25 10.6 16.6833 11 17.3333 11H19.5C20.15 11 20.5833 11.4 20.5833 12V19C20.5833 19.6 20.15 20 19.5 20H6.5C5.85 20 5.41667 19.6 5.41667 19V12C5.41667 11.4 5.85 11 6.5 11H8.66667C9.31667 11 9.75 10.6 9.75 10C9.75 9.4 9.31667 9 8.66667 9H6.5C4.65833 9 3.25 10.3 3.25 12V19C3.25 20.7 4.65833 22 6.5 22H19.5C21.3417 22 22.75 20.7 22.75 19V12C22.75 10.3 21.3417 9 19.5 9ZM8.99167 14.7L12.2417 17.7C12.4583 17.9 12.675 18 13 18C13.325 18 13.5417 17.9 13.7583 17.7L17.0083 14.7C17.4417 14.3 17.4417 13.7 17.0083 13.3C16.575 12.9 15.925 12.9 15.4917 13.3L14.0833 14.6V3C14.0833 2.4 13.65 2 13 2C12.35 2 11.9167 2.4 11.9167 3V14.6L10.5083 13.3C10.075 12.9 9.425 12.9 8.99167 13.3C8.55833 13.7 8.55833 14.3 8.99167 14.7V14.7Z' fill='%23BD1920'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+        }
+
+        & a {
+            color: var(--color-red);
+            text-decoration: underline;
+        }
+    }
+
+    &__check {
+        margin: 0 0 12px 0;
+        & h3 {
+            font-size: var(--font-size-16-7);
+            font-family: "Montserrat-Bold";
+        }
+
+        & p {
+            line-height: 1;
+        }
+    }
+
+    &__check-form {
+        & input {
+            padding: 12px 20px 12px;
+            border-radius: 16px;
+            background-color: var(--color-white);
+        }
+    }
+}
+.partners {
+    // .partners__list
+
+    &__list {
+        display: flex;
+    }
+}
+.services {
+    // .services__container
+
+    &__container {
+        display: flex;
+    }
+
+    // .services__info
+
+    &__info {
+    }
+
+    // .services__items
+
+    &__items {
+        & ul {
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
+        }
+    }
+}
+.popular-products {
+    // .popular-products__tabs
+
+    &__tabs {
+        & ul {
+            display: flex;
+        }
+    }
+}
+.portfolio {
+    // .portfolio_items
+
+    &_items {
+        & ul {
+            display: flex;
+        }
+    }
+}
+.news {
+    // .news__container
+
+    &__container {
+    }
+}
+.history {
+    // .history__logo
+
+    &__logo {
+    }
+
+    // .history__info
+
+    &__info {
+    }
+}
+.certificates {
+    // .certificates__container
+
+    &__container {
+        & ul {
+            display: flex;
+        }
+    }
+}
+.bottom {
+    display: flex;
+    // .bottom_contacts
+
+    &__contacts {
+    }
+
+    // .bottom_lider
+
+    &__lider {
+    }
+
+    // .bottom__menu
+
+    &__menu {
+        display: flex;
+    }
+}
